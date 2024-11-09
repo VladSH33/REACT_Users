@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './MyInput.module.css'
+import classes from './MyInput.module.less'
 
 const MyInput = React.forwardRef((props, ref) => {
     return (

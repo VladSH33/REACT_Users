@@ -1,10 +1,15 @@
 import React from 'react';
-import cl from './Loader.module.css'
+import './Loader.css'
 
 const Loader = () => {
     return (
-        <div className={cl.loader}>
-            
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
         </div>
     );
 };

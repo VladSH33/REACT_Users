@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 
 import {Route, Routes} from "react-router-dom";
 
-import Users from "../pages/Users";
+import Users from "../pages/Users/Users";
 import { privateRoutes, publicRoutes } from '../router/routes';
-import Login from '../pages/Login';
+import Login from '../pages/Login/Login';
 import { AuthContext } from '../context';
 
 const AppRouter = () => {

@@ -1,23 +1,24 @@
 import React from 'react';
-import UserItem from './UserItem';
+import UserItem from '../UserItem/UserItem';
 import {
     CSSTransition,
     TransitionGroup,
   } from 'react-transition-group';
 
-const UserList = ({users, remove}) => {
+import './UserList.less'
 
-    if (!users.length) {
+const UserList = ({users, remove, isUsersLoading}) => {
+
+    if (!users.length && !isUsersLoading) {
         return (
-            <h1 style={{textAlign: 'center'}}>
+            <h1 className='userList__title-undefind'>
                 Пользователи не найдены!
             </h1>
         )
     }
-
     return (
-        <div>
-            <h1 className="title">
+        <div className='userList__container'>
+            <h1 className="userList__title">
                 Список пользователей
             </h1>
             <TransitionGroup>
@@ -27,7 +28,7 @@ const UserList = ({users, remove}) => {
                         timeout={500}
                         classNames="user"
                     >
-                        <UserItem remove={remove} number={index + 1} user={user}/>
+                        <UserItem remove={remove} number={user.id} user={user}/>
                     </CSSTransition>
                 )}
             </TransitionGroup>

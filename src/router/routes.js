@@ -1,7 +1,7 @@
-import About from "../pages/About";
-import Login from "../pages/Login";
-import UserIdPage from "../pages/UserIdPage";
-import Users from "../pages/Users";
+import About from "../pages/About/About";
+import Login from "../pages/Login/Login";
+import UserIdPage from "../pages/UserPage/UserIdPage";
+import Users from "../pages/Users/Users";
 
 export const privateRoutes = [
     {path: '/about', component: About},

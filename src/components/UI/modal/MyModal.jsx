@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from './MyModal.module.css'
+import cl from './MyModal.module.less'
 
 const MyModal = ({children, visible, setVisible}) => {
 

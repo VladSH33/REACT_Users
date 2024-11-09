@@ -1,0 +1,85 @@
+@import '../../styles/variables.less';
+
+.auth-container {
+  align-items: center;
+  min-height: 100vh;
+  background-color: @background-color;
+  z-index: 1;
+  align-content: center;
+  position: relative;
+
+    .auth-form {
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: @border-radius;
+        width: 400px;
+        position: relative;
+
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: ~"conic-gradient(from var(--angle), transparent 0%, #b8d0d7, white, #b8d0d7, white, #b8d0d7, white)";
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            padding: 5px;
+            border-radius: @border-radius;
+            animation:  3s spin linear infinite;
+        }
+
+        &::before {
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+
+        @keyframes spin {
+            from {
+                --angle: 0deg;
+            }
+            to {
+                --angle: 360deg;
+            }
+        }
+
+        .auth-form__title {
+            margin-bottom: 30px;
+            color: @text-color;
+            text-align: center;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                color: @text-color;
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid @secondary-color;
+                border-radius: @border-radius;
+
+                &:focus {
+                border-color: @primary-color;
+                outline: none;
+                box-shadow: 0 0 5px rgba(@primary-color, 0.5);
+                }
+            }
+        }
+    }
+}
