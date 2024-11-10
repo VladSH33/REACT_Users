@@ -1,18 +1,18 @@
-@import '../../styles/variables.less';
+@import '../../styles/global.less';
 
 .users {
-    background-color: @background-color;
     display: flex;
     padding: 0 30px;
     min-height: 100vh;
-    justify-content:space-around;
+    justify-content:space-between;
+    align-items: flex-start;
+    gap: 40px;
 
     &__module-box {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background-color: @secondary-color;
-        height: 260px;
         padding: 30px;
         border-radius: @border-radius;
         margin-top: 30px;

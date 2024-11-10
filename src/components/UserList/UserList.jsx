@@ -17,11 +17,11 @@ const UserList = ({users, remove, isUsersLoading}) => {
         )
     }
     return (
-        <div className='userList__container'>
+        <div className='userList'>
             <h1 className="userList__title">
                 Список пользователей
             </h1>
-            <TransitionGroup>
+            <TransitionGroup className='userList__container'>
                 {users.map((user, index) =>
                     <CSSTransition
                         key={user.id}

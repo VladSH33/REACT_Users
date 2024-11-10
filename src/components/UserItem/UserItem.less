@@ -1,17 +1,17 @@
 @import '../../styles/variables.less';
 
 .user {
-    width: 600px;
+    min-width: 600px;
+    width: 100%;
+    gap: 10px;
     display: flex;
     justify-content:space-between;
-    margin: 20px auto;
     color: @text-color;
     background-color: @secondary-color;
     border-radius: @border-radius;
-    // border: 3px solid rgba(0,0,0, 0.5);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    padding: 5px 15px;
-    position: relative;
+    padding: 15px;
+    align-items: center;
 
     &__characteristic {
         margin-left: 25px;
@@ -21,8 +21,8 @@
     &__btns {
         display: flex;
         justify-content: space-between;
-        width: 220px;
-        margin: auto 0;
+        gap: 15px;
+
 
         &:first-child {
             margin-right: 10px;

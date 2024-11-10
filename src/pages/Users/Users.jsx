@@ -60,7 +60,7 @@ function Users() {
   }
 
   return (
-    <div className="users">
+    <div className="users container">
         <div className="users__module-box">
             <div className="users__btn-create">
               <MyButton onClick={() => setModal(true)}>

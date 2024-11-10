@@ -6,7 +6,7 @@ import './userFilter.less'
 
 const UserFilter = ({filter, setFilter}) => {
     return (
-        <div className='filter-container'>
+        <>
             <MyInput
                 value={filter.query}
                 onChange={(e) => setFilter({...filter, query: e.target.value})}
@@ -21,7 +21,7 @@ const UserFilter = ({filter, setFilter}) => {
                     {value: "id", name: "По порядку"}
                 ]}
             />
-        </div>
+        </>
     );
 };
 
