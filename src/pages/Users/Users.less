@@ -2,11 +2,11 @@
 
 .users {
     display: flex;
-    padding: 0 30px;
     min-height: 100vh;
     justify-content:space-between;
     align-items: flex-start;
     gap: 40px;
+    flex-wrap: wrap;
 
     &__module-box {
         display: flex;
@@ -17,6 +17,10 @@
         border-radius: @border-radius;
         margin-top: 30px;
         box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        flex: 1;
+        margin-top: 80px;
+        position: sticky;
+        top: 20px;
 
         .title-parametrs {
             font-size: 16px;
@@ -25,12 +29,13 @@
         }
     }
 
-    &__list {
-        min-width: 600px;
+    &__content {
+        width: 100%;
+        flex: 1;
     }
 
     .filterContainer {
-        width: 300px;
+        min-width: 100px;
         display: flex;
         flex-direction: column;
         gap: 10px;

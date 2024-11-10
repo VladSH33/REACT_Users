@@ -93,7 +93,7 @@ function Users() {
         </div>
         
         
-      <div className="users__list">
+      <div className="users__content">
           {userError && 
             <h1>Произошла ошибка: ${userError}</h1>
           }

@@ -13,7 +13,7 @@ const Login = () => {
     }
 
     return (
-        <div className='auth-container'>
+        <div className='auth-container container'>
             <form className='auth-form' onSubmit={login}>
                 <div className='auth-form__title'>Авторизация</div>
                 <div class="form-group">

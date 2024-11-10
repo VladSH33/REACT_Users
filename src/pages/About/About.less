@@ -1,7 +1,5 @@
 @import '../../styles/global.less';
 
-
-
 .page {
     min-height: 100vh;
     padding: 80px 0;
@@ -11,8 +9,6 @@
         grid-template-columns: 1fr;
 
         .promo {
-            width: 1200px;
-            margin: 0 auto;
             padding-bottom: 50px;
 
             h1 {
@@ -20,6 +16,20 @@
                 font-size: 62px;
                 margin: 0 auto;
                 width: 850px;
+
+                .large-mixin({
+                    width: 100%;
+                    font-size: 48px;
+                    text-align: center;
+                });
+
+                .medium-mixin({
+                    font-size: 36px;
+                });
+
+                .Small-mixin({
+                    font-size: 28px;
+                });
             }
     
             &__btn {
@@ -30,6 +40,10 @@
             &__img {
                 height: 500px;
                 overflow: hidden;
+
+                .medium-mixin({
+                    height: 300px;
+                });
     
                 img {
                     width: 100%;
@@ -40,40 +54,52 @@
         }
 
         .about {
-            background-color: rgb(244, 244, 244);
+            background-color: @light-bg;
             width: 100%;
             padding: 80px 0;
             text-align: center;
             font-size: 20px;
             color: @text-color;
 
-            .inner-container {
-                max-width: 800px; /* ширина контента */
-                margin: 0 auto;
+            .medium-mixin({
+                padding: 60px 0;
+                font-size: 16px;
+            });
 
-                .about__title {
-                    font-size: 30px;
-                }
+            .about__title {
+                font-size: 30px;
 
-                .desc {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 15px;
-                    margin-top: 15px;
-                }
+                .medium-mixin({
+                    font-size: 24px;
+                });
+            }
+
+            .desc {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 15px;
             }
         }
 
         .services {
-            width: 1200px;
-            margin: 0 auto;
             padding: 50px 0;
-            color: white;
+            color: @white;
 
             &__title {
                 margin: 0 auto;
                 width: 640px;
                 font-size: 50px;
+
+                .large-mixin({
+                    width: 100%;
+                    text-align: center;
+                    font-size: 40px;
+                });
+
+                .medium-mixin({
+                    font-size: 32px;
+                });
             }
 
             &__subtitle {
@@ -81,26 +107,46 @@
                 width: 540px;
                 font-size: 25px;
                 font-weight: 500;
+
+                .large-mixin({
+                    width: 100%;
+                    text-align: center;
+                    font-size: 20px;
+                });
             }
 
             &__table {
                 margin: 50px auto;
                 width: 600px;
-                border-collapse: collapse; /* объединяет границы ячеек */
+                border-collapse: collapse;
+
+                .large-mixin({
+                    width: 100%;
+                });
 
                 .table__title {
                     font-weight: 500;
                     font-size: 20px;
                     margin-bottom: 20px;
+
+                    .medium-mixin({
+                        font-size: 18px;
+                    });
                 }
 
-                tr td{
-                    border-top: 2px solid rgba(255, 255, 255, 0.3);
+                tr td {
+                    border-top: 2px solid @table-border;
                     padding: 8px;
                     font-size: 20px;
+
+                    .medium-mixin({
+                        font-size: 16px;
+                        padding: 12px 8px;
+                    });
                 }
+
                 .col2 {
-                    color: green;
+                    color: @primary-green-color;
                     text-align: right;
                     font-weight: bold;
                 }
@@ -108,69 +154,106 @@
         }
 
         .prices {
-            background-color: rgb(244, 244, 244);
+            background-color: @secondary-color;
             width: 100%;
             padding: 80px 0;
             color: @text-color;
 
-            .inner-container {
-                max-width: 1000px; /* ширина контента */
+            .medium-mixin({
+                padding: 60px 0;
+            });
+
+            h2 {
+                text-align: center;
+                font-size: 40px;
+                margin-bottom: 40px;
+
+                .medium-mixin({
+                    font-size: 32px;
+                    margin-bottom: 30px;
+                });
+            }
+
+            .prices-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
                 margin: 0 auto;
 
-                h2 {
+                .large-mixin({
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                });
+
+                .medium-mixin({
+                    grid-template-columns: 1fr;
+                    max-width: 400px;
                     margin: 0 auto;
-                    width: 270px;
-                    font-size: 40px;
-                    margin-bottom: 40px;
-                }
+                });
 
-                .prices-cards {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill, 225px);
-                    width: 100%;
-                    max-width: 1000px; /* Ширина grid-контейнера */
-                    justify-content: center;
-                    justify-items: center; /* Размещаем карточку по центру */
-                    column-gap: 30px; /* Отступ между колонками */
-                    row-gap: 10px; /* Отступ между рядами */
-                    margin: 0 auto;
+                .card {
+                    padding: 40px 20px;
+                    min-height: 300px;
+                    text-align: center;
+                    background-color: @white;
+                    display: flex;
+                    gap: 15px;
+                    flex-direction: column;
+                    border-radius: @border-radius;
+                    box-shadow: 0 5px 15px @shadow-color;
+                    transition: transform 0.3s ease;
 
-                    .card {
-                        padding: 40px 20px;
-                        width: 250px;
-                        min-height: 300px;
-                        text-align: center;
-                        background-color: white;
-                        display: flex;
-                        gap: 15px;
-                        flex-direction: column;
+                    .medium-mixin({
+                        padding: 30px 20px;
+                        min-height: auto;
+                    });
 
-                        &__title {
-                            font-size: 18px;
-                            font-weight: 400;
-                        }
-
-                        &__price {
-                            font-size: 25px;
-                            font-weight: 600;
-                        }
-
-                        &__period {
-                            color: rgb(110, 110, 110);
-                        }
-
-                        hr {
-                            color: rgb(110, 110, 110);
-                        }
+                    &:hover {
+                        transform: translateY(-5px);
                     }
 
-                    .card.dark {
-                        background-color: rgb(38, 38, 38);
-                        color: white;
+                    &__title {
+                        font-size: 20px;
+                        font-weight: 500;
+                        color: @primary-color;
+                    }
+
+                    &__price {
+                        font-size: 28px;
+                        font-weight: 700;
+                        color: @primary-green-color;
+                    }
+
+                    &__period {
+                        color: @primary-gray-color;
+                        font-size: 16px;
+                    }
+
+                    hr {
+                        border: none;
+                        height: 1px;
+                        background-color: @card-border;
+                        margin: 5px 0;
+                    }
+
+                    &__desc {
+                        color: @primary-gray-color;
+                        line-height: 1.5;
+                    }
+                }
+
+                .card.dark {
+                    background-color: @background-color;
+                    color: @white;
+
+                    .card__title {
+                        color: @white;
+                    }
+
+                    hr {
+                        background-color: @card-border;
                     }
                 }
             }
-
         }
     }
 }

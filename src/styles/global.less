@@ -14,4 +14,23 @@ body {
 .container {
     max-width: 1140px;
     margin: 0 auto;
+    padding: 0 20px;
+}
+
+.large-mixin(@rules) {
+    @media (max-width: 992px) {
+        @rules();
+    }
+}
+
+.medium-mixin(@rules) {
+    @media (max-width: 768px) {
+        @rules();
+    }
+}
+
+.Small-mixin(@rules) {
+    @media (max-width: 576px) {
+        @rules();
+    }
 }
